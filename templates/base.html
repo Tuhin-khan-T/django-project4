@@ -1,0 +1,40 @@
+<!-- task_management_system/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Task Management System{% endblock %}</title>
+    <!-- Include Bootstrap CSS or link to your preferred CSS framework -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384...snip...aC5wryj" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_task' %}">Add Task</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'show_task' %}">Show Tasks</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Include Bootstrap JS or link to your preferred JS framework -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384...snip...LjYUIMNq6omlTa/V8Xmcu6F5g01jU8fZK/+rW8"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384...snip...MzZ3uj3TDS0Z1DJtWp7HOXliKQ5Aix/5Y9hxD5qL3wqFG61sUZsRDSw50ncGp0mY"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384...snip.../03OXwnw54lOEXMtl18BR0fVJUqLMd6B5K/sGDR4NjLxoixKWH6eM+8DH5ePa3a"
+        crossorigin="anonymous"></script>
+</body>
+</html>

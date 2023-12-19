@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex flex-wrap justify-content-center px-15 pt-5">
+    {% for task in data %}
+    <div class="col-sm-3 flex-grow-1 mb-3">
+        <div class="card" style="width: 250px; height: 550px;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ task.title }}</h5>
+                <p class="card-text flex-fill">{{ task.content }}</p>
+
+                <div class="category-buttons">
+                    <p>Category :</p>
+                    {% for cat in task.category.all %}
+                    <button class="btn btn-primary btn-sm m-2" disabled>{{ cat.name }}</button>
+                    {% endfor %}
+                </div>
+
+                <div class="card-buttons">
+                    <a href="{% url 'edit_task' task.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_task' task.id %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
